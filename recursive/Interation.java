@@ -1,40 +1,40 @@
-package entity;
+ï»¿package entity;
 /**
- * ÓÃµü´úµÄ·½·¨Çó½â³¬Ô½·½³ÌÊ½
+ * ç”¨è¿­ä»£çš„æ–¹æ³•æ±‚è§£è¶…è¶Šæ–¹ç¨‹å¼
  * @author YH93
- *f(x)=2*(x+1)^n+e^x=0,¼ÙÉè½âx=1
+ *f(x)=2*(x+1)^n+e^x=0,å‡è®¾è§£x=1
  */
 public class Interation {
-	private int count=15;//µİ¹écount´Î
+	private int count=15;//é€’å½’countæ¬¡
 	public static void main(String[] args) throws Exception {
-		int n=7;//n´Î·½Êı
+		int n=7;//næ¬¡æ–¹æ•°
 		Interation in=new Interation();
 		in.action(1, n, n);
 		
 	}
 	/**
-	 * f(x)¶àÏîÊ½
-	 * @param x ±äÁ¿
-	 * @param m £¨x+1£©µÄ´Î·½Êı
+	 * f(x)å¤šé¡¹å¼
+	 * @param x å˜é‡
+	 * @param m ï¼ˆx+1ï¼‰çš„æ¬¡æ–¹æ•°
 	 * @return
 	 */
 	public double f(double x,int m){
 		return 2*Math.pow(x+1, m)+Math.pow(Math.E, x);
 	}
 	/**
-	 * f(x)µ¼Êı
-	 * @param x ±äÁ¿
-	 * @param n (x+1)µÄ´Î·½Êı
+	 * f(x)å¯¼æ•°
+	 * @param x å˜é‡
+	 * @param n (x+1)çš„æ¬¡æ–¹æ•°
 	 * @return
 	 */
 	public double fd(double x,int n) {
 		return 2*derivative(x, n)+Math.pow(Math.E, x);
 	}
 	/**
-	 * ÓÃµİ¹éµÄ·½·¨Çó½â
-	 * @param x ±äÁ¿
-	 * @param m f(x)ÖĞ(x+1)µÄ´Î·½Êı
-	 * @param n f(x)µ¼ÊıÖĞ(x+1)µÄ´Î·½Êı
+	 * ç”¨é€’å½’çš„æ–¹æ³•æ±‚è§£
+	 * @param x å˜é‡
+	 * @param m f(x)ä¸­(x+1)çš„æ¬¡æ–¹æ•°
+	 * @param n f(x)å¯¼æ•°ä¸­(x+1)çš„æ¬¡æ–¹æ•°
 	 * @return
 	 */
 	public  double action(double x,int m,int n) {
@@ -43,15 +43,15 @@ public class Interation {
 			count--;
 			x=x-f(x,m)/fd(x,n);
 			action(x,m,n--);
-			System.out.println(x);
+			System.out.println("é€’å½’è¿‡ç¨‹ä¸­xçš„å€¼ï¼š"+x);
 		}else{
-			System.out.println("½â½Ó½üÓÚ£º"+x);
+			System.out.println("æœ€ç»ˆè§£æ¥è¿‘äºï¼š"+x);
 		}
 		return x;
 		
 	}
 	/**
-	 * ¶Ô(x+1)^nÇóµ¼µÄ·½·¨
+	 * å¯¹(x+1)^næ±‚å¯¼çš„æ–¹æ³•
 	 * @return
 	 */
 	public  double derivative(double x,double n) {

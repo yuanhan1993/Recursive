@@ -1,16 +1,16 @@
-package cases;
+﻿package cases;
 /**
- * �õݹ��㷨ʵ��쳲���������
- * �ݹ��ص㣺
- * 1.�ݹ���Ƿ������������
- * 2.ʹ�õݹ����ʱ��������һ����ȷ�ĵݹ������������Ϊ�ݹ����
- * 3.�����࣬��������Ч�ʵͣ�һ�㲻�ᳫ
+ * 用递归算法实现斐波那契数列
+ * 递归特点：
+ * 1.递归就是方法里调用自身
+ * 2.使用递归策略时，必须有一个明确的递归结束条件，称为递归出口
+ * 3.程序简洁，但是运行效率低，一般不提倡
  * @author YH93
  *
  */
 public class fib {
      public static void main(String[] args) {
-		System.out.println("쳲���������");
+		System.out.println("斐波那契数列");
 		for(int i=1;i<=10;i++){
 			System.out.print(fab(i)+"  ");
 		}

@@ -1,42 +1,42 @@
-package cases;
+ï»¿package cases;
 
 import java.util.Scanner;
 
 /**
- * ººÅµËşÎÊÌâ
- * ÓÃµİ¹éµÄ·½·¨
+ * æ±‰è¯ºå¡”é—®é¢˜
+ * ç”¨é€’å½’çš„æ–¹æ³•
  * @author YH93
  *
  */
 
 public class Hanoi {
-	private int i=1;//¼ÇÂ¼²½Êı
+	private int i=1;//è®°å½•æ­¥æ•°
 	/**
 	 * 
-	 * @param n  ÅÌ×ÓÊıÄ¿
-	 * @param origin  Ô´Ëş
-	 * @param assist  ½èÓÃËş
-	 * @param destination Ä¿µÄËş
+	 * @param n  ç›˜å­æ•°ç›®
+	 * @param origin  æºå¡”
+	 * @param assist  å€Ÿç”¨å¡”
+	 * @param destination ç›®çš„å¡”
 	 */
 	public void hanno(int n,String origin,String assist,String destination){
 		if(n==1){
 			move(n,origin,destination);
 		}else{
-			//ÏÈ½«Ô´ËşµÄÇ°n-1¸öÅÌ×Ó½èÖúÄ¿µÄËşÒÆ¶¯µ½½èÖúËşÉÏ
+			//å…ˆå°†æºå¡”çš„å‰n-1ä¸ªç›˜å­å€ŸåŠ©ç›®çš„å¡”ç§»åŠ¨åˆ°å€ŸåŠ©å¡”ä¸Š
 			hanno(n-1,origin,destination,assist);
-			//½«Ê£ÏÂµÄÒ»¸öÅÌ×ÓÒÆ¶¯µ½Ä¿µÄËşÉÏ
+			//å°†å‰©ä¸‹çš„ä¸€ä¸ªç›˜å­ç§»åŠ¨åˆ°ç›®çš„å¡”ä¸Š
 			move(n,origin,destination);
-			//×îºó½«½èÓÃËşÉÏµÄn-1¸öÅÌ×ÓÒÆ¶¯µ½Ä¿µÄËşÉÏ
+			//æœ€åå°†å€Ÿç”¨å¡”ä¸Šçš„n-1ä¸ªç›˜å­ç§»åŠ¨åˆ°ç›®çš„å¡”ä¸Š
 			hanno(n-1,assist,origin,destination);
 			
 		}
 	}
 	public void move(int n,String origin,String destination){
-		System.out.println("µÚ"+i+++"²½£º"+n+"ºÅÅÌ×Ó"+origin+"------->"+destination);
+		System.out.println("ç¬¬"+i+++"æ­¥ï¼š"+n+"å·ç›˜å­"+origin+"------->"+destination);
 	}
 	public static void main(String[] args) {
-		//ÊäÈëÅÌ×ÓÊı
-		System.out.println("ÇëÊäÈëÅÌ×ÓÊı£º");
+		//è¾“å…¥ç›˜å­æ•°
+		System.out.println("è¯·è¾“å…¥ç›˜å­æ•°ï¼š");
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		Hanoi hanoi=new Hanoi();
